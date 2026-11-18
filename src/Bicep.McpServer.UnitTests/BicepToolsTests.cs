@@ -317,9 +317,11 @@ public class BicepToolsTests
     }
 
     [TestMethod]
-    public async Task ListExtensionResourceTypes_returns_graph_resource_types()
+    [DataRow("br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0")]
+    [DataRow("oci:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0")]
+    public async Task ListExtensionResourceTypes_returns_graph_resource_types(string extensionReference)
     {
-        var response = await tools.ListExtensionResourceTypes("br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0");
+        var response = await tools.ListExtensionResourceTypes(extensionReference);
         var result = response.ResourceTypes;
 
         result.Should().BeEquivalentTo([

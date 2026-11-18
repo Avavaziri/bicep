@@ -126,7 +126,7 @@ public sealed class BicepTools(
     - Discover what resource types are available in an extension (e.g., Microsoft Graph)
     - Find the API versions for extension resources
     The extensionReference must be a canonical OCI artifact reference in the format "br:<registry>/<repository>:<tag>"
-    (e.g., "br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0").
+    (e.g., "br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0"). The same reference with "oci:" instead of "br:" is also accepted.
     Use list_well_known_extensions to discover available extensions and their versions.
     """)]
     public async Task<ResourceTypeListResult> ListExtensionResourceTypes(
@@ -149,7 +149,7 @@ public sealed class BicepTools(
     - Learn about required vs optional properties, their types, and allowed values
     - Generate accurate Bicep code with proper property names and types
     The extensionReference must be a canonical OCI artifact reference in the format "br:<registry>/<repository>:<tag>"
-    (e.g., "br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0").
+    (e.g., "br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0"). The same reference with "oci:" instead of "br:" is also accepted.
     Use list_well_known_extensions to discover available extensions and their versions.
     Specify the resource type (e.g., Microsoft.Graph/applications) and API version (e.g., v1.0 or beta).
     """)]
